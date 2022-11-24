@@ -1,0 +1,34 @@
+function solution(new_id) {
+    var answer = '';
+    
+    new_id = new_id.toLowerCase();
+    
+    new_id = new_id.replace(/[^\w-.]/g,"");
+    
+    new_id = new_id.replace(/[.]{2,}/g,".");
+    
+    new_id = new_id.replace(/^[.]/g,"");
+    new_id = new_id.replace(/[.]$/g,"");
+    
+    if(new_id.length ==0)
+        {
+            new_id ="a";
+        }
+    if(new_id.length>15)
+        {
+            new_id = new_id.substring(0,15);
+        }
+        
+    new_id = new_id.replace(/[.]$/g,"");
+    
+    
+    while(new_id.length<3){
+        if(new_id.length<3){
+            new_id += new_id.charAt(new_id.length-1);
+        }
+    }
+    
+    answer = new_id
+    
+    return answer;
+}
