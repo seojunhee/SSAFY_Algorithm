@@ -1,0 +1,13 @@
+function solution(a, b, n) {
+    var answer = 0;
+    let lasts = 0;
+    while(true){
+    answer = answer + parseInt(n/a)*b;
+    n = n%a + parseInt(n/a)*b;
+    if(n<a){
+        break;
+    }
+    }
+    
+    return answer;
+}
